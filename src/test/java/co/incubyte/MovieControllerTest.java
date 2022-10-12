@@ -24,13 +24,12 @@ class MovieControllerTest {
     TMDBMovie movies = client.toBlocking().retrieve(HttpRequest.GET("?query=schindler"), TMDBMovie.class);
 
     assertThat(movies).isNotNull();
-
     assertThat(movies.getPage()).isNotNull();
     assertThat(movies.getResults()).isNotNull();
 
     Movie movie = movies.getResults().get(0);
 
-    assertThat(movie.getName()).contains("schindler");
+    assertThat(movie.getName()).contains("Schindler");
     assertThat(movie.getOverview()).isNotNull();
     assertThat(movie.getRating()).isNotNull();
     assertThat(movie.getPosterPath()).isNotNull();
