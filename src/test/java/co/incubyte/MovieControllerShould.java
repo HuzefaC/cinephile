@@ -17,9 +17,9 @@ class MovieControllerShould {
   @Test
   @DisplayName("invoke movie service find")
   void invoke_movie_service_find() {
-    MovieContoller movieContoller = new MovieContoller(movieService);
+    MovieController movieController = new MovieController(movieService);
 
-    movieContoller.find("schindler");
+    movieController.find("schindler");
 
     then(movieService).should().find("schindler");
   }

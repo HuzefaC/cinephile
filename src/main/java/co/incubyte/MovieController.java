@@ -1,10 +1,10 @@
 package co.incubyte;
 
-public class MovieContoller {
+public class MovieController {
 
   private MovieService movieService;
 
-  public MovieContoller(MovieService movieService) {
+  public MovieController(MovieService movieService) {
     this.movieService = movieService;
   }
 
