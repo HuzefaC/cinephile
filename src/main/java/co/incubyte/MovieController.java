@@ -1,5 +1,10 @@
 package co.incubyte;
 
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.QueryValue;
+
+@Controller("/movies")
 public class MovieController {
 
   private MovieService movieService;
@@ -8,7 +13,8 @@ public class MovieController {
     this.movieService = movieService;
   }
 
-  public TMDBMovie find(String name) {
-    return movieService.find(name);
+  @Get()
+  public TMDBMovie find(@QueryValue String query) {
+    return movieService.find(query);
   }
 }
