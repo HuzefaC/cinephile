@@ -2,7 +2,7 @@ package co.incubyte;
 
 import java.util.List;
 
-public class TMDBMovie {
+public class TMDBResponse {
 
   private Integer page;
   private List<Movie> results;

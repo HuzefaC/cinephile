@@ -11,7 +11,7 @@ public class MovieService {
     this.movieGateway = movieGateway;
   }
 
-  public TMDBMovie find(String name) {
+  public TMDBResponse find(String name) {
     return movieGateway.find(name);
   }
 }

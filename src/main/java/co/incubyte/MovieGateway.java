@@ -13,8 +13,8 @@ public class MovieGateway {
   @Client("https://api.themoviedb.org/3/")
   HttpClient httpClient;
 
-  public TMDBMovie find(String name) {
+  public TMDBResponse find(String name) {
     String uri = "search/movie?api_key=e470560acfb347655d8af373c29aba11&query=" + name;
-    return httpClient.toBlocking().retrieve(HttpRequest.GET(uri), TMDBMovie.class);
+    return httpClient.toBlocking().retrieve(HttpRequest.GET(uri), TMDBResponse.class);
   }
 }

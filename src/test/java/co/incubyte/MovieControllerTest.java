@@ -21,7 +21,7 @@ class MovieControllerTest {
   @DisplayName("should return movies on search")
   void should_return_movies_on_search() {
 
-    TMDBMovie movies = client.toBlocking().retrieve(HttpRequest.GET("?query=schindler"), TMDBMovie.class);
+    TMDBResponse movies = client.toBlocking().retrieve(HttpRequest.GET("?query=schindler"), TMDBResponse.class);
 
     assertThat(movies).isNotNull();
     assertThat(movies.getPage()).isNotNull();

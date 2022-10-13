@@ -14,7 +14,7 @@ public class MovieController {
   }
 
   @Get()
-  public TMDBMovie find(@QueryValue String query) {
+  public TMDBResponse find(@QueryValue String query) {
     return movieService.find(query);
   }
 }
