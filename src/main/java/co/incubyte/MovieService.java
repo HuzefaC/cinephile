@@ -1,6 +1,7 @@
 package co.incubyte;
 
 import io.micronaut.context.annotation.Bean;
+import java.util.List;
 
 @Bean
 public class MovieService {
@@ -11,7 +12,7 @@ public class MovieService {
     this.movieGateway = movieGateway;
   }
 
-  public TMDBResponse find(String name) {
-    return movieGateway.find(name);
+  public List<Movie> find(String name) {
+    return movieGateway.find(name).getResults();
   }
 }
