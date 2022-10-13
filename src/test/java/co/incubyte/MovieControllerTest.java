@@ -30,6 +30,7 @@ class MovieControllerTest {
 
     Movie movie = movies.get(0);
 
+    assertThat(movie.getId()).isNotNull();
     assertThat(movie.getName()).contains("Schindler");
     assertThat(movie.getOverview()).isNotNull();
     assertThat(movie.getRating()).isNotNull();
@@ -37,4 +38,24 @@ class MovieControllerTest {
     assertThat(movie.getReleaseDate()).isNotNull();
     assertThat(movie.getVoteCount()).isNotNull();
   }
+
+  @Test
+  @DisplayName("should return movie detail")
+  void should_return_movie_detail() {
+    Movie movie = client.toBlocking().retrieve(HttpRequest.GET("/24428"),
+        Movie.class);
+
+    assertThat(movie.getId()).isNotNull();
+    assertThat(movie.getName()).contains("The Avengers");
+    assertThat(movie.getOverview()).isNotNull();
+    assertThat(movie.getRating()).isNotNull();
+    assertThat(movie.getPosterPath()).isNotNull();
+    assertThat(movie.getReleaseDate()).isNotNull();
+    assertThat(movie.getVoteCount()).isNotNull();
+    assertThat(movie.getBackdropPath()).isNotNull();
+    assertThat(movie.getLanguage()).isNotNull();
+    assertThat(movie.getRuntime()).isNotNull();
+    assertThat(movie.getTagline()).isNotNull();
+  }
+
 }

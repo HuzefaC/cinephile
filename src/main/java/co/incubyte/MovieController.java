@@ -18,4 +18,9 @@ public class MovieController {
   public List<Movie> find(@QueryValue String query) {
     return movieService.find(query);
   }
+
+  @Get("/{id}")
+  public Movie findById(int id) {
+    return movieService.findById(id);
+  }
 }

@@ -23,4 +23,14 @@ class MovieControllerShould {
 
     then(movieService).should().find("schindler");
   }
+
+  @Test
+  @DisplayName("invoke movie service findById")
+  void invoke_movie_service_find_by_id() {
+    MovieController controller = new MovieController(movieService);
+
+    controller.findById(10);
+
+    then(movieService).should().findById(10);
+  }
 }

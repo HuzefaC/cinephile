@@ -14,4 +14,12 @@ public class TMDBResponse {
   public List<Movie> getResults() {
     return results;
   }
+
+  public void setPage(Integer page) {
+    this.page = page;
+  }
+
+  public void setResults(List<Movie> results) {
+    this.results = results;
+  }
 }

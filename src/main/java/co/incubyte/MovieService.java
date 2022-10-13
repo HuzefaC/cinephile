@@ -13,6 +13,11 @@ public class MovieService {
   }
 
   public List<Movie> find(String name) {
-    return movieGateway.find(name).getResults();
+    return movieGateway.find(name)
+        .getResults();
+  }
+
+  public Movie findById(int id) {
+    return movieGateway.findById(id);
   }
 }

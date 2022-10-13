@@ -17,4 +17,11 @@ public class MovieGateway {
     String uri = "search/movie?api_key=e470560acfb347655d8af373c29aba11&query=" + name;
     return httpClient.toBlocking().retrieve(HttpRequest.GET(uri), TMDBResponse.class);
   }
+
+  public Movie findById(int id) {
+    String uri = "/movie/" + id + "?api_key=e470560acfb347655d8af373c29aba11";
+    return httpClient.toBlocking()
+        .retrieve(HttpRequest.GET(uri),
+            Movie.class);
+  }
 }
