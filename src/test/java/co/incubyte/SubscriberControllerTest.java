@@ -21,6 +21,7 @@ class SubscriberControllerTest {
   @DisplayName("should save subscriber")
   void should_save_subscriber() {
     Subscriber subscriber = new Subscriber();
+    subscriber.setId(1L);
     subscriber.setEmail("jon@winteriscoming.co");
     subscriber.setFirstName("Jon");
     subscriber.setLastName("Snow");
@@ -39,6 +40,7 @@ class SubscriberControllerTest {
   @DisplayName("should retrieve subscriber by id")
   void should_retrieve_subscriber_by_id() {
     Subscriber expectedSubscriber = new Subscriber();
+    expectedSubscriber.setId(1L);
     expectedSubscriber.setEmail("jon@winteriscoming.co");
     expectedSubscriber.setFirstName("Jon");
     expectedSubscriber.setLastName("Snow");
